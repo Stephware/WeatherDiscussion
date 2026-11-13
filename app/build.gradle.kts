@@ -4,8 +4,8 @@ import java.util.Properties
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
+    id("com.google.devtools.ksp")
     id("org.jetbrains.kotlin.plugin.serialization")
-
 }
 //API KEY
 val localProps = Properties().apply{
@@ -82,4 +82,8 @@ dependencies {
     //IMAGE LOADERS
     implementation(libs.compose)
     implementation(libs.okhttp3.integration)
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    implementation("com.github.bumptech.glide:compose:1.0.0-beta01")
+    implementation("com.github.bumptech.glide:okhttp3-integration:4.16.0")
+    ksp("com.github.bumptech.glide:ksp:4.16.0")
 }
